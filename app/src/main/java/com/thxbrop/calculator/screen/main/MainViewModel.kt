@@ -69,7 +69,7 @@ class MainViewModel : BaseViewModel<MainState, MainEvent>(MainState()) {
                 double?.let {
                     val list = readable.formula.toMutableList().apply {
                         removeLast()
-                        add((it / 100).toString())
+                        add((it / 100.0).toBigDecimal().toString())
                     }
                     _state.value = readable.copy(
                         formula = list,
